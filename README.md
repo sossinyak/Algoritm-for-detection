@@ -52,7 +52,34 @@ data/              исходные и подготовленные датасе
 
 ## Быстрый показ результатов
 
-Готовые артефакты для демонстрации находятся в `results/full_protocol`: сравнительные графики в `final_plots`, карты этапов обработки в `stage_visualization`, анализ промышленно-структурного подмножества в `industrial_structural_subset_plots`. На графиках папка `LEVIR-CD-filtred` отображается как датасет `LEVIR-CD`, чтобы подписи соответствовали тексту ВКР.
+После локального запуска готовые артефакты для демонстрации сохраняются в `results/full_protocol`: сравнительные графики в `final_plots`, карты этапов обработки в `stage_visualization`, анализ промышленно-структурного подмножества в `industrial_structural_subset_plots`. Папка `results/` не хранится в Git и формируется заново при запуске экспериментов.
+
+## Данные
+
+Датасеты не входят в репозиторий из-за объема и условий распространения. Их нужно скачать из официальных источников и разместить локально в папке `data/`.
+
+Официальные источники:
+
+- LEVIR-CD: официальный сайт датасета <https://justchenhao.github.io/LEVIR/>. На странице доступны ссылки на Google Drive и Baidu Drive, описание датасета и правила использования. Авторы указывают, что изображения и разметка предназначены только для академического некоммерческого использования; при использовании нужно соблюдать Google Earth Terms of Use и цитировать работу Chen, H.; Shi, Z. `A Spatial-Temporal Attention-Based Method and a New Dataset for Remote Sensing Image Change Detection`, Remote Sensing, 2020.
+- JL1-CD: официальный репозиторий реализации <https://github.com/circleLZY/MTKD-CD> и статья <https://arxiv.org/abs/2502.13407>. В репозитории приведены ссылки для загрузки датасета через Google Drive, Baidu Disk и Hugging Face, а также BibTeX для цитирования работы `JL1-CD: A New Benchmark for Remote Sensing Change Detection and a Robust Multi-Teacher Knowledge Distillation Framework`.
+
+Ожидаемое локальное расположение данных:
+
+```text
+data/
+  LEVIR-CD-filtred/
+    train|val|test/
+      A/
+      B/
+      label/
+  JL1-CD/
+    train|val|test/
+      A/
+      B/
+      label/
+```
+
+Папка `data/synthetic-lab/` создается автоматически при полном запуске, если включен параметр `--refresh-synthetic`.
 
 ## Полный запуск
 
