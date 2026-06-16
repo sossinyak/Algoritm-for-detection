@@ -1,0 +1,53 @@
+seed: 42
+data:
+  dataset: LEVIR-CD
+  data_path: ./data/LEVIR-CD-filtred
+  subset: all
+  alignment_warning_px: 1.5
+  alignment:
+    auto_align_b: true
+    max_shift_px: 12.0
+    min_response: 0.05
+    align_label: false
+adaptive_algorithm:
+  patch_size: 1
+  components: 2
+  variance_ratio: null
+  whitening: true
+  radiometric_normalization: histogram_match
+  threshold:
+    method: otsu
+    otsu_scale: 0.9781
+    adaptive_block_size: 35
+    adaptive_c: -2.0
+    sauvola_k: 0.20
+    kimura_k: 0.35
+    kimura_sigma_max: 64.0
+  postprocessing:
+    median_kernel: 3
+    opening_kernel: 5
+    closing_kernel: 5
+    min_area: 256
+    shape_filter:
+      max_aspect_ratio: 8.0
+      min_solidity: 0.2
+      min_extent: 0.08
+    fill_holes: true
+experiments:
+  split: test
+  max_samples: null
+  method_set: individual
+  evaluation_mode: production
+  save_visualizations: true
+  visualization_samples: 3
+research_protocol:
+  split_root: ./data
+  results_dir: ./results
+  max_tune_samples: 24
+  max_eval_samples: 80
+  bootstrap_iterations: 2000
+classical_parameters:
+  sigma: auto
+  adaptive_threshold:
+    block_size: 35
+    c: -2.0

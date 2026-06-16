@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local experiment outputs and generated datasets.
+results/
+data/synthetic-lab/
+data/LEVIR-CD-filtred/
+data/JL1-CD/
